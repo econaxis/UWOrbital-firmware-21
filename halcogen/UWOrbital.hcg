@@ -3,7 +3,7 @@
   <DEVICE>
     <family>TMS570LS12x</family>
     <device>TMS570LS1224PGE_FREERTOS</device>
-    <dilfile>freeRTOS_starter.dil</dilfile>
+    <dilfile>UWOrbital.dil</dilfile>
     <tools>ti</tools>
   </DEVICE>
   <VERSION>
