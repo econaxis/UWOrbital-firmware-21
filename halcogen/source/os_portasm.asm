@@ -297,7 +297,10 @@ ulPortCountLeadingZeros
         .asmfunc
 vPortSWI
         stmfd   sp!, {r11,r12,lr}
-        ldrb    r12, [lr, #-1]
+        mrs     r12, spsr
+        ands    r12, r12, #0x20
+        ldrbne  r12, [lr, #-2]
+        ldrbeq  r12, [lr, #-4]
         ldr     r14,  table
         ldr     r12, [r14, r12, lsl #2]
         blx     r12

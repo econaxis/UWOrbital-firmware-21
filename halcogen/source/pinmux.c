@@ -6,7 +6,7 @@
 */
 
 /* 
-* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com  
+* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com 
 * 
 * 
 *  Redistribution and use in source and binary forms, with or without 
@@ -186,7 +186,7 @@ void muxInit(void){
     
     pinMuxReg->PINMMR8 =    PINMUX_PIN_39_HET1_13 | PINMUX_PIN_40_MIBSPI1NCS_2 | PINMUX_PIN_41_HET1_15;
     
-    pinMuxReg->PINMMR9 = ((~(pinMuxReg->PINMMR9 >> 18U) & 0x00000001U ) << 18U) | PINMUX_PIN_54_MIBSPI3NENA | PINMUX_PIN_55_GIOB_2;
+    pinMuxReg->PINMMR9 =  ((~(pinMuxReg->PINMMR9 >> 18U) & 0x00000001U ) << 18U) | PINMUX_PIN_54_MIBSPI3NENA | PINMUX_PIN_55_GIOB_2;
     
     pinMuxReg->PINMMR10 =   PINMUX_PIN_86_AD1EVT;
     
@@ -216,7 +216,7 @@ void muxInit(void){
     
     pinMuxReg->PINMMR23 =   ((~(pinMuxReg->PINMMR5 >> 1U) & 0x00000001U ) << 8U) | ((~(pinMuxReg->PINMMR5 >> 9U) & 0x00000001U ) << 16U) | ((~(pinMuxReg->PINMMR5 >> 17U) & 0x00000001U ) << 24U);
     
-    pinMuxReg->PINMMR24 =   ((~(pinMuxReg->PINMMR20 >> 17U) & 0x00000001U ) << 16U)  | ((~(pinMuxReg->PINMMR8 >> 9U) & 0x00000001U ) << 24U);
+    pinMuxReg->PINMMR24 =   ((~(pinMuxReg->PINMMR20 >> 17U) & 0x00000001U ) << 16U) | ((~(pinMuxReg->PINMMR8 >> 9U) & 0x00000001U ) << 24U);
     
     /*SAFETYMCUSW 134 S MR:12.2 <APPROVED> "LDRA Tool issue" */
     pinMuxReg->PINMMR25 =   ((~(pinMuxReg->PINMMR12 >> 17U) & 0x00000001U ) << 8U) | ((~(pinMuxReg->PINMMR7 >> 9U) & 0x00000001U ) << 16U) | ((~(pinMuxReg->PINMMR0 >> 26U) & 0x00000001U ) << 24U);
@@ -243,8 +243,9 @@ void muxInit(void){
 /* USER CODE END */
 
     PINMUX_GATE_EMIF_CLK_ENABLE(OFF);
-    PINMUX_GIOB_DISABLE_HET2_ENABLE(OFF);
+    PINMUX_GIOB_DISABLE_HET2_ENABLE(ON);
     PINMUX_ALT_ADC_TRIGGER_SELECT(1);
+    PINMUX_ETHERNET_SELECT(RMII);
     
 /* USER CODE BEGIN (4) */
 /* USER CODE END */
@@ -343,7 +344,6 @@ void pinmuxGetConfigValue(pinmux_config_reg_t *config_reg, config_value_type_t t
         config_reg->CONFIG_PINMMR28 = pinMuxReg->PINMMR28;
         config_reg->CONFIG_PINMMR29 = pinMuxReg->PINMMR29;
         config_reg->CONFIG_PINMMR30 = pinMuxReg->PINMMR30;
-        config_reg->CONFIG_PINMMR31 = pinMuxReg->PINMMR31;
         config_reg->CONFIG_PINMMR32 = pinMuxReg->PINMMR32;
         config_reg->CONFIG_PINMMR33 = pinMuxReg->PINMMR33;
         config_reg->CONFIG_PINMMR34 = pinMuxReg->PINMMR34;

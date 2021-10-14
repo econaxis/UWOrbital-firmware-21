@@ -12,7 +12,7 @@
 */
 
 /* 
-* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com  
+* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com 
 * 
 * 
 *  Redistribution and use in source and binary forms, with or without 
@@ -76,6 +76,7 @@ typedef volatile struct iommErrFault
     uint32 FAULT_STATUS_REG;            /* Fault Status Register */
     uint32 FAULT_CLEAR_REG;             /* Fault Clear Register */	
 } iommErrFault_t;
+
 /* Pinmux Register Frame Definition */
 /** @struct pinMuxKicker
 *   @brief Pin Muxing Kicker Register Definition

@@ -104,7 +104,7 @@ void setupPLL(void)
                         |  (uint32)((uint32)0x1FU << 24U)
                         |  (uint32)0x00000000U
                         |  (uint32)((uint32)(6U - 1U)<< 16U)
-                        |  (uint32)(0x7700U);
+                        |  (uint32)(0xA400U);
 
     /**   - Setup pll control register 2
     *     - Setup spreading rate
@@ -128,7 +128,7 @@ void setupPLL(void)
     systemREG2->PLLCTL3 = (uint32)((uint32)(2U - 1U) << 29U)
                         | (uint32)((uint32)0x1FU << 24U)
                         | (uint32)((uint32)(6U - 1U)<< 16U)
-                        | (uint32)(0x7700U);
+                        | (uint32)(0xA400U);
 
     /** - Enable PLL(s) to start up or Lock */
     systemREG1->CSDIS = 0x00000000U
@@ -261,10 +261,10 @@ void mapClocks(void)
     /** @b Initialize @b Clock @b Tree: */
     /** - Disable / Enable clock domain */
     systemREG1->CDDIS = (uint32)((uint32)0U << 4U ) /* AVCLK1 , 1 - OFF, 0 - ON */
-                      | (uint32)((uint32)0U << 5U ) /* AVCLK2 , 1 - OFF, 0 - ON */
+                      | (uint32)((uint32)1U << 5U ) /* AVCLK2 , 1 - OFF, 0 - ON */
                       | (uint32)((uint32)0U << 8U ) /* VCLK3 , 1 - OFF, 0 - ON */
                       | (uint32)((uint32)0U << 9U ) /* VCLK4 , 1 - OFF, 0 - ON */
-                      | (uint32)((uint32)1U << 10U) /* AVCLK3 , 1 - OFF, 0 - ON */
+                      | (uint32)((uint32)0U << 10U) /* AVCLK3 , 1 - OFF, 0 - ON */
                       | (uint32)((uint32)0U << 11U); /* AVCLK4 , 1 - OFF, 0 - ON */
 
 
