@@ -4,6 +4,16 @@
 
 #include "cdh.h"
 
+/**
+
+Telemetry
+Used to define the processes and structured needed for the once per minute telemetry readings taken.
+Called by cdh regularily, calls other systems for telemetry updates.
+Operates entirely on and is called from the CDH thread
+
+**/
+
+// The storage format of a telemetry reading
 struct telemetryReading {
   int temp; // internal temperature
   int posX; // estimated position
