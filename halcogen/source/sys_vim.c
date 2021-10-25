@@ -363,7 +363,7 @@ void vimInit(void)
                     
     /* enable interrupts */
     vimREG->REQMASKSET0 = (uint32)((uint32)1U << 0U)
-                        | (uint32)((uint32)1U << 1U)
+                        | (uint32)((uint32)0U << 1U)
                         | (uint32)((uint32)1U << 2U)
                         | (uint32)((uint32)0U << 3U)
                         | (uint32)((uint32)0U << 4U)

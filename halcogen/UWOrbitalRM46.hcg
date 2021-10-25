@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SETTINGS>
   <DEVICE>
-    <family>TMS570LS12x</family>
-    <device>TMS570LS1224PGE_FREERTOS</device>
-    <dilfile>UWOrbital.dil</dilfile>
+    <family>RM46x</family>
+    <device>RM46L852PGE_FREERTOS</device>
+    <dilfile>UWOrbitalRM46.dil</dilfile>
     <tools>ti</tools>
   </DEVICE>
   <VERSION>
@@ -377,6 +377,30 @@
         <NAME>i2c.h</NAME>
       </HDRI2C>
       <SRCI2C/>
+      <HDR1EMAC>
+        <NAME>emac.h</NAME>
+      </HDR1EMAC>
+      <HDR2EMAC>
+        <NAME>hw_emac.h</NAME>
+      </HDR2EMAC>
+      <HDR3EMAC>
+        <NAME>hw_emac_ctrl.h</NAME>
+      </HDR3EMAC>
+      <HDR4EMAC>
+        <NAME>hw_mdio.h</NAME>
+      </HDR4EMAC>
+      <HDR5EMAC>
+        <NAME>hw_reg_access.h</NAME>
+      </HDR5EMAC>
+      <HDR6EMAC>
+        <NAME>mdio.h</NAME>
+      </HDR6EMAC>
+      <HDRPHY>
+        <NAME>phy_dp83640.h</NAME>
+      </HDRPHY>
+      <SRC1EMAC/>
+      <SRC2EMAC/>
+      <SRCPHY/>
       <HDRDCC_R>
         <NAME>reg_dcc.h</NAME>
       </HDRDCC_R>
@@ -384,6 +408,49 @@
         <NAME>dcc.h</NAME>
       </HDRDCC>
       <SRCDCC/>
+      <HDRPOM_R>
+        <NAME>reg_pom.h</NAME>
+      </HDRPOM_R>
+      <HDRPOM>
+        <NAME>pom.h</NAME>
+      </HDRPOM>
+      <SRCPOM/>
+      <HDR1USB>
+        <NAME>usbcdc.h</NAME>
+      </HDR1USB>
+      <HDR2USB>
+        <NAME>usb_serial_structs.h</NAME>
+      </HDR2USB>
+      <HDR3USB>
+        <NAME>usbdcdc.h</NAME>
+      </HDR3USB>
+      <HDR4USB>
+        <NAME>usbdevice.h</NAME>
+      </HDR4USB>
+      <HDR5USB>
+        <NAME>usbdevicepriv.h</NAME>
+      </HDR5USB>
+      <HDR6USB>
+        <NAME>usb-ids.h</NAME>
+      </HDR6USB>
+      <HDR7USB>
+        <NAME>usblib.h</NAME>
+      </HDR7USB>
+      <HDR8USB>
+        <NAME>usb.h</NAME>
+      </HDR8USB>
+      <HDR9USB>
+        <NAME>hw_usb.h</NAME>
+      </HDR9USB>
+      <SRC1USB/>
+      <SRC2USB/>
+      <SRC3USB/>
+      <SRC5USB/>
+      <SRC6USB/>
+      <SRC7USB/>
+      <SRC8USB/>
+      <SRC9USB/>
+      <SRC10USB/>
       <HDRCRC_R>
         <NAME>reg_crc.h</NAME>
       </HDRCRC_R>
@@ -413,7 +480,7 @@
       </HDREQEP>
       <SRCEQEP/>
       <HDR1FEE>
-        <NAME>Device_TMS570LS12.h</NAME>
+        <NAME>Device_RM46.h</NAME>
       </HDR1FEE>
       <HDR2FEE>
         <NAME>Device_header.h</NAME>
@@ -695,6 +762,40 @@
       </SRCI2C>
     </FILENAMES>
   </I2C>
+  <EMAC>
+    <FILENAMES>
+      <HDR1EMAC>
+        <PATH>include\emac.h</PATH>
+      </HDR1EMAC>
+      <HDR2EMAC>
+        <PATH>include\hw_emac.h</PATH>
+      </HDR2EMAC>
+      <HDR3EMAC>
+        <PATH>include\hw_emac_ctrl.h</PATH>
+      </HDR3EMAC>
+      <HDR4EMAC>
+        <PATH>include\hw_mdio.h</PATH>
+      </HDR4EMAC>
+      <HDR5EMAC>
+        <PATH>include\hw_reg_access.h</PATH>
+      </HDR5EMAC>
+      <HDR6EMAC>
+        <PATH>include\mdio.h</PATH>
+      </HDR6EMAC>
+      <HDRPHY>
+        <PATH>include\phy_dp83640.h</PATH>
+      </HDRPHY>
+      <SRC1EMAC>
+        <PATH/>
+      </SRC1EMAC>
+      <SRC2EMAC>
+        <PATH/>
+      </SRC2EMAC>
+      <SRCPHY>
+        <PATH/>
+      </SRCPHY>
+    </FILENAMES>
+  </EMAC>
   <DCC>
     <FILENAMES>
       <HDRDCC_R>
@@ -708,6 +809,77 @@
       </SRCDCC>
     </FILENAMES>
   </DCC>
+  <POM>
+    <FILENAMES>
+      <HDRPOM_R>
+        <PATH>include\reg_pom.h</PATH>
+      </HDRPOM_R>
+      <HDRPOM>
+        <PATH>include\pom.h</PATH>
+      </HDRPOM>
+      <SRCPOM>
+        <PATH/>
+      </SRCPOM>
+    </FILENAMES>
+  </POM>
+  <USB>
+    <FILENAMES>
+      <HDR1USB>
+        <PATH>include\usbcdc.h</PATH>
+      </HDR1USB>
+      <HDR2USB>
+        <PATH>include\usb_serial_structs.h</PATH>
+      </HDR2USB>
+      <HDR3USB>
+        <PATH>include\usbdcdc.h</PATH>
+      </HDR3USB>
+      <HDR4USB>
+        <PATH>include\usbdevice.h</PATH>
+      </HDR4USB>
+      <HDR5USB>
+        <PATH>include\usbdevicepriv.h</PATH>
+      </HDR5USB>
+      <HDR6USB>
+        <PATH>include\usb-ids.h</PATH>
+      </HDR6USB>
+      <HDR7USB>
+        <PATH>include\usblib.h</PATH>
+      </HDR7USB>
+      <HDR8USB>
+        <PATH>include\usb.h</PATH>
+      </HDR8USB>
+      <HDR9USB>
+        <PATH>include\hw_usb.h</PATH>
+      </HDR9USB>
+      <SRC1USB>
+        <PATH/>
+      </SRC1USB>
+      <SRC2USB>
+        <PATH/>
+      </SRC2USB>
+      <SRC3USB>
+        <PATH/>
+      </SRC3USB>
+      <SRC5USB>
+        <PATH/>
+      </SRC5USB>
+      <SRC6USB>
+        <PATH/>
+      </SRC6USB>
+      <SRC7USB>
+        <PATH/>
+      </SRC7USB>
+      <SRC8USB>
+        <PATH/>
+      </SRC8USB>
+      <SRC9USB>
+        <PATH/>
+      </SRC9USB>
+      <SRC10USB>
+        <PATH/>
+      </SRC10USB>
+    </FILENAMES>
+  </USB>
   <CRC>
     <FILENAMES>
       <HDRCRC_R>
@@ -763,7 +935,7 @@
   <FEE>
     <FILENAMES>
       <HDR1FEE>
-        <PATH>include\Device_TMS570LS12.h</PATH>
+        <PATH>include\Device_RM46.h</PATH>
       </HDR1FEE>
       <HDR2FEE>
         <PATH>include\Device_header.h</PATH>

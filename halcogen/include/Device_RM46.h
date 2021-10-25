@@ -1,7 +1,7 @@
 /**********************************************************************************************************************
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  Device_TMS570LS12.h
+ *         File:  Device_RM46.c
  *      Project:  Tms570_TIFEEDriver
  *       Module:  TIFEEDriver
  *    Generator:  None
@@ -18,7 +18,7 @@
  *********************************************************************************************************************/
 
 /* 
-* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com  
+* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com 
 * 
 * 
 *  Redistribution and use in source and binary forms, with or without 
@@ -56,8 +56,8 @@
  * INCLUDES
  *********************************************************************************************************************/
 
-#ifndef DEVICE_TMS570LS12x_H
-#define DEVICE_TMS570LS12x_H
+#ifndef DEVICE_RM46_H
+#define DEVICE_RM46_H
 
 
 /** @def DEVICE_CONFIGURATION_VERSION
@@ -106,6 +106,6 @@
 #include "hal_stdtypes.h"
 #include "Device_types.h"
 
-#endif /* DEVICE_TMS570LS12x_H */
+#endif /* DEVICE_RM46_H */
 
 /* End of File */

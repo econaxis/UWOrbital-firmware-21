@@ -257,7 +257,7 @@ typedef struct vim_config_reg
                                 | (uint32)((uint32)SYS_IRQ << 31U))
 					
 #define VIM_REQMASKSET0_CONFIGVALUE	( (uint32)((uint32)1U << 0U)\
-                                    | (uint32)((uint32)1U << 1U)\
+                                    | (uint32)((uint32)0U << 1U)\
                                     | (uint32)((uint32)1U << 2U)\
                                     | (uint32)((uint32)0U << 3U)\
                                     | (uint32)((uint32)0U << 4U)\

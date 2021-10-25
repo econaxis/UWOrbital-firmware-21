@@ -73,11 +73,6 @@ void pmmInit(void)
 	while((pmmREG->LOGICPDPWRSTAT[PMM_LOGICPD3] & PMM_LOGICPDPWRSTAT_DOMAINON) == 0U)
     { 
     }/* Wait */  
-    /*wait till Logic Power Domain PD3 turns ON*/
-    /*SAFETYMCUSW 28 D MR:NA <APPROVED> "Wait for hardware status bit" */
-	while((pmmREG->LOGICPDPWRSTAT[PMM_LOGICPD4] & PMM_LOGICPDPWRSTAT_DOMAINON) == 0U)
-    { 
-    }/* Wait */  
     /*wait till Logic Power Domain PD5 turns ON*/
     /*SAFETYMCUSW 28 D MR:NA <APPROVED> "Wait for hardware status bit" */
 	while((pmmREG->LOGICPDPWRSTAT[PMM_LOGICPD5] & PMM_LOGICPDPWRSTAT_DOMAINON) == 0U)
