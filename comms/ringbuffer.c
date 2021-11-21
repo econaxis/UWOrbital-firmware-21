@@ -15,12 +15,14 @@ static char *pointer_at(struct RingBuffer *buf, uint32_t index) {
 
 
 // Put spin hooks here to check when we're spinning the locks
-static void spin() {}
+static void spin_hook() {}
 
 uint32_t rb_len(struct RingBuffer *buf) {
     uint32_t length = buf->length;
     return length;
 }
+
+int contention_points = 0;
 
 void push_queue(struct RingBuffer *buf, const void *data) {
     xSemaphoreTake(buf->sem, portMAX_DELAY);
@@ -36,8 +38,8 @@ void push_queue(struct RingBuffer *buf, const void *data) {
     uint32_t push_index = (old_length + old_start) % size_buf(buf);
     while (buf->slotlock[push_index]) {
         // Spin lock
-        printf("Push spinning\n");
-        spin();
+        spin_hook();
+        contention_points++;
         taskYIELD();
     }
     buf->slotlock[push_index] = true;
@@ -55,7 +57,8 @@ bool pop_queue(struct RingBuffer *buf, char *into) {
         int old_start = buf->start++ % size_buf(buf);
         while (buf->slotlock[old_start]) {
             // Someone already has this position locked. What to do? Spin until they're done with it.
-            spin();
+            spin_hook();
+            contention_points++;
             taskYIELD();
         }
         // Lock this position
@@ -63,7 +66,6 @@ bool pop_queue(struct RingBuffer *buf, char *into) {
 
         volatile int protect = *((int *) pointer_at(buf, old_start));
         xSemaphoreGive(buf->sem);
-//        vTaskDelay(pdMS_TO_TICKS(100));
         volatile int protect1 = *((int *) pointer_at(buf, old_start));
 
         assert(protect == protect1);
@@ -73,7 +75,6 @@ bool pop_queue(struct RingBuffer *buf, char *into) {
         buf->slotlock[old_start] = false;
         return true;
     } else {
-        printf("Buffer empty, cannot pop\n");
         xSemaphoreGive(buf->sem);
         return false;
     }
